@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-base:    #0a0e1a;
+  --bg-card:    #111827;
+  --bg-card2:   #1a2235;
+  --border:     #1e2d45;
+  --green:      #00d68f;
+  --orange:     #f59e0b;
+  --red:        #ef4444;
+  --blue:       #3b82f6;
+  --purple:     #a855f7;
+  --cyan:       #06b6d4;
+  --text-pri:   #e2e8f0;
+  --text-sec:   #64748b;
+  --text-muted: #334155;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-pri);
+  font-family: 'Syne', sans-serif;
+  margin: 0;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-card); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* Pulse animation para el dot live */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 214, 143, 0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(0, 214, 143, 0); }
+}
+.pulse { animation: pulse-green 2s infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.4s ease forwards; }
